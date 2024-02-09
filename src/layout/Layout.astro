@@ -1,0 +1,32 @@
+---
+import NavBar from '../components/NavBar.astro';
+import { ViewTransitions, slide } from 'astro:transitions';
+import '../css/index.css';
+import ToggleTheme from '../components/ToggleTheme';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Portafolio | {title}</title>
+		<ViewTransitions />
+	</head>
+	<body data-theme="dark" transition:animate="none">
+		<header class="header">
+			<NavBar />
+			<!-- <ToggleTheme client:load /> -->
+		</header>
+		<main transition:animate="fade">
+			<slot />
+		</main>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+---
+import Layout from '../layout/Layout.astro';
+import perfilImg from '../assets/perfil.jpg';
+---
+
+<Layout title="main">
+	<main class="main">
+		<section class="main__info-area">
+			<div class="main__info-area__text">
+				<h1 transition:name="title">
+					Hi! Here Luis to make your ideas come true. I am your future software
+					developer.
+				</h1>
+				<br />
+				<br />
+				<a href="/about" class="main__info-area__button"> Know me</a>
+			</div>
+		</section>
+		<figure class="main__img-container" transition:name="image">
+			<img class="main__img-container__img" src={perfilImg.src} alt="foto" />
+		</figure>
+	</main>
+</Layout>

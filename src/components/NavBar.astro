@@ -1,0 +1,43 @@
+---
+
+---
+
+<nav class="navbar" transition:animate="none">
+	<a class="navbar__link desactive" href="/" data-astro-history="replace"
+		>Main</a
+	>
+	<a class="navbar__link desactive" href="/about" data-astro-history="replace"
+		>About</a
+	>
+	<a
+		class="navbar__link desactive"
+		href="/habilities"
+		data-astro-history="replace">Habilities</a
+	>
+	<a
+		class="navbar__link desactive"
+		href="/projects"
+		data-astro-history="replace">Projects</a
+	>
+	<a class="navbar__link desactive" href="/social" data-astro-history="replace"
+		>Social</a
+	>
+</nav>
+
+<script>
+	const navbarFn = () => {
+		const nav = document.querySelector('.navbar');
+		const navLink = nav?.querySelectorAll('a');
+		const currentUrl = window.location.href;
+		navLink?.forEach((link) => {
+			if (link.href === currentUrl) {
+				link.classList.replace('desactive', 'active');
+			} else {
+				link.classList.replace('active', 'desactive');
+			}
+		});
+	};
+
+	document.addEventListener('astro:after-swap', navbarFn);
+	document.addEventListener('DOMContentLoaded', navbarFn);
+</script>

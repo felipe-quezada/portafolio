@@ -1,0 +1,27 @@
+{
+  "name": "portafolio1.0",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.4.1",
+    "@astrojs/react": "^3.0.9",
+    "@types/react": "^18.2.51",
+    "@types/react-dom": "^18.2.18",
+    "astro": "^4.2.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.17",
+    "postcss-mixins": "^9.0.4",
+    "postcss-nested": "^6.0.1"
+  }
+}
