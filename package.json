@@ -17,9 +17,11 @@
     "astro": "^4.2.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "three": "^0.161.0",
     "typescript": "^5.3.3"
   },
   "devDependencies": {
+    "@types/three": "^0.161.2",
     "autoprefixer": "^10.4.17",
     "postcss-mixins": "^9.0.4",
     "postcss-nested": "^6.0.1"

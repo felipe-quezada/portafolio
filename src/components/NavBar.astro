@@ -28,9 +28,17 @@
 	const navbarFn = () => {
 		const nav = document.querySelector('.navbar');
 		const navLink = nav?.querySelectorAll('a');
-		const currentUrl = window.location.href;
+		const currentUrl = window.location.pathname;
 		navLink?.forEach((link) => {
-			if (link.href === currentUrl) {
+			if (currentUrl === '/') {
+				if (link.pathname == currentUrl) {
+					link.classList.replace('desactive', 'active');
+				} else {
+					link.classList.replace('active', 'desactive');
+				}
+			} else if (link.pathname.match(currentUrl)) {
+				link.classList.replace('desactive', 'active');
+			} else if (currentUrl.match(link.pathname) && link.pathname != '/') {
 				link.classList.replace('desactive', 'active');
 			} else {
 				link.classList.replace('active', 'desactive');

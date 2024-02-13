@@ -1,10 +1,53 @@
 ---
+import { slide } from 'astro:transitions';
 import Layout from '../../layout/Layout.astro';
+
+// const site = Astro.url.pathname;
 ---
 
 <Layout title="Habilities">
 	<main class="habilities">
-		<h1 transition:name="title">It is my stack!</h1>
-		<slot transition:animate="slide" />
+		<section class="habilities__section-skill">
+			<h1 transition:name="title">It is my stack!</h1>
+
+			<section class="habilities__section-skill-nav">
+				<a class="habilities__button-link" href="/habilities/vue">
+					<button class="habilities__button">
+						<p>Vue</p>
+					</button>
+				</a>
+				<a class="habilities__button-link" href="/habilities/react">
+					<button class="habilities__button">
+						<p>React</p>
+					</button>
+				</a>
+				<a class="habilities__button-link" href="/habilities/express">
+					<button class="habilities__button">
+						<p>Express</p>
+					</button>
+				</a>
+				<a class="habilities__button-link" href="/habilities/python">
+					<button class="habilities__button">
+						<p>Python</p>
+					</button>
+				</a>
+				<a class="habilities__button-link" href="/habilities/typescript">
+					<button class="habilities__button">
+						<p>Typescript</p>
+					</button>
+				</a>
+				<a class="class=" habilities__button-link href="/habilities/studying">
+					<button class="habilities__button studying">
+						<p>Studying!</p>
+					</button>
+				</a>
+			</section>
+		</section>
+		<div
+			class="habilities__slot"
+			transition:animate={slide({ duration: '1s' })}
+		>
+			<slot />
+		</div>
 	</main>
 </Layout>

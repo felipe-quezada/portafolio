@@ -20,12 +20,12 @@ const { title } = Astro.props;
 		<title>Portafolio | {title}</title>
 		<ViewTransitions />
 	</head>
-	<body data-theme="dark" transition:animate="none">
+	<body data-theme="dark">
 		<header class="header">
 			<NavBar />
 			<!-- <ToggleTheme client:load /> -->
 		</header>
-		<main transition:animate="fade">
+		<main transition:animate="none">
 			<slot />
 		</main>
 	</body>
