@@ -7,8 +7,7 @@ module.exports = {
 		require('postcss-mixins')({
 			mixins: {
 				images: (_, name) => {
-					return {
-						'background-image': `url('src/assets/${name}-desktop.png')`,
+					return {,
 						animation: `${name} 12s infinite`,
 						'animation-play-state': 'paused',
 					};
