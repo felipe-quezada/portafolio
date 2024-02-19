@@ -1,10 +1,60 @@
 ---
 import Layout from '../layout/Layout.astro';
+import CardProjects, { type Project } from '../components/CardProjects.astro';
+
+const projects: Project[] = [
+	{
+		name: 'pokedex-app',
+		description:
+			'Web application to search pokemons from name to know the data of that	pokemon. Made on React using Axios to fetch the data. The style was made on Tailwinds.',
+		url: 'https://challenge-avatar.vercel.app/',
+		git: 'https://github.com/felipe-quezada/challenge-avatar',
+	},
+	{
+		name: 'country-app',
+		description:
+			'A simple page made on Vue to search info about countries. The information is fetching from a graphql api using apollo. This project was made to practice Vue and graphql',
+		url: 'https://challenge-fractalup.vercel.app/',
+		git: 'https://github.com/felipe-quezada/challenge-fractalup',
+	},
+	{
+		name: 'url-shorten',
+		description:
+			'Challenge to frontendMentor made on React using CSS vanilla. My first single page.',
+		url: 'https://url-shortening-api-landing-page-pi.vercel.app/',
+		git: 'https://github.com/felipe-quezada/URL-shortening-API-landing-page',
+	},
+	{
+		name: 'landing-page',
+		description:
+			'A landing page made on Vue with Tailwind. This project was to my first interview challenge',
+		url: 'https://evisalud-challenge-frontend.vercel.app/',
+		git: 'https://github.com/felipe-quezada/Evisalud-challenge-frontend',
+	},
+	{
+		name: 'google-sheet',
+		description:
+			'A SSR web made on Flask who display a singlepage with data from a google sheet file. flask on back and jinja on front, my lovest project',
+		url: 'https://flask-sheets-v5um.onrender.com/',
+		git: 'https://github.com/felipe-quezada/flask-Sheet-Prueba',
+	},
+	{
+		name: 'node-app',
+		description:
+			'A terminal program to organize your chores. Made on Node with a few packages to bring color and life to the program. the task remain saved even if you close the application',
+		git: 'https://github.com/felipe-quezada/node-tareas-app',
+	},
+];
 ---
 
 <Layout title="Projects">
-	<main>
-		<h1>que talca</h1>
-		<div id="test" style="width: 100px; height: 100px;"></div>
-	</main>
+	<article style="height: 100dvh; text-align: center;">
+		<h1 transition:name="title">My resently projects</h1>
+		<br />
+		<section
+			style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; align-items: center; padding: 50px;"
+		>
+			{projects.map((project) => <CardProjects project={project} />)}
+		</section>
+	</article>
 </Layout>
