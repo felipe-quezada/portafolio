@@ -269,19 +269,23 @@ body {
 		border-radius: 29px 29px 0px 0px;
 
 		&.pokedex-app {
+			background-image: url('../assets/PokedexApp-desktop.png');
 			@mixin images PokedexApp;
 		}
 
 		&.country-app {
 			background-position-y: 0px;
+			background-image: url('../assets/CountryApp-desktop.png');
 			@mixin images CountryApp;
 		}
 
 		&.url-shorten {
+			background-image: url('../assets/UrlShorten-desktop.png');
 			@mixin images UrlShorten;
 		}
 
 		&.landing-page {
+			background-image: url('../assets/LandingPage-desktop.png');
 			@mixin images LandingPage;
 		}
 
