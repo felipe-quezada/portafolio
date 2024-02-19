@@ -1,0 +1,14 @@
+---
+interface Props {
+	icon: string;
+	url: string;
+}
+
+const { icon, url } = Astro.props;
+---
+
+<a href={url}>
+	<button class="link-project">
+		<Fragment set:html={icon} />
+	</button>
+</a>

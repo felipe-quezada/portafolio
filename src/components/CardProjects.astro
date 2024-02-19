@@ -1,0 +1,30 @@
+---
+import Github from '../assets/githubIcon.svg?raw';
+import Onlive from '../assets/live.svg?raw';
+import IconLogo from './IconLogo.astro';
+import type { Project } from '../interfaces/projects.ts';
+
+interface Props {
+	project: Project;
+}
+
+const { project } = Astro.props;
+const title =
+	project.name.charAt(0).toUpperCase() +
+	project.name.slice(1, project.name.length).replace('-', ' ');
+---
+
+<section class="card-apps">
+	<div class=`card-apps__image-area ${project.name}`></div>
+	<section class="card-apps__text-area">
+		<h3 class="card-apps__text-area-title">{title}</h3>
+		<div class="card-apps__icon-area">
+			{project.git ? <IconLogo icon={Github} url={project.git} /> : ''}
+			{project.url ? <IconLogo icon={Onlive} url={project.url} /> : ''}
+		</div>
+		<br />
+		<p>
+			{project.description}
+		</p>
+	</section>
+</section>

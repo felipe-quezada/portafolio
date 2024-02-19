@@ -1,0 +1,44 @@
+---
+import Layout from '../layout/Layout.astro';
+import resume from '../assets/cv-FELIPE.pdf';
+import github from '../assets/githubIcon.svg?raw';
+import gmail from '../assets/gmail.svg?raw';
+import linkedin from '../assets/linkedin.svg?raw';
+import pdf from '../assets/pdf.svg?raw';
+---
+
+<Layout title="Contact">
+	<article class="contact-area">
+		<h3 transition:name="title">Contact me</h3>
+		<br />
+		<div class="contact-area__container">
+			<section class="contact-area__links">
+				<a href="https://github.com/felipe-quezada" target="_blank">
+					<Fragment set:html={github} />
+					<p>Luis Quezada</p>
+				</a>
+				<a
+					href="mailto:luisf.quezada26@gmail.com?subject=Contact"
+					target="_blank"
+				>
+					<Fragment set:html={gmail} />
+					<p>luisf.quezada26</p>
+				</a>
+				<a
+					href="https://www.linkedin.com/in/luis-quezada-b0b197270/"
+					target="_blank"
+				>
+					<Fragment set:html={linkedin} />
+					<p>Luis Quezada</p>
+				</a>
+			</section>
+			<br />
+			<h3>And here my resume</h3>
+			<br />
+			<a style="color: blue;" href={resume} download>
+				<Fragment set:html={pdf} />
+				<p>Resume</p>
+			</a>
+		</div>
+	</article>
+</Layout>
